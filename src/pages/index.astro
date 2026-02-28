@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import UseCases from '../components/UseCases.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import DemoChat from '../components/DemoChat';
+import Stats from '../components/Stats.astro';
+import Pricing from '../components/Pricing.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import FloatingChat from '../components/FloatingChat';
+import '../styles/global.css';
+---
+
+<Layout
+  title="Eva AI — Your Intelligent Business Partner | AI Assistant for Tax Consulting"
+  description="Eva AI is an AI-powered business assistant for tax consultants, lawyers, and advisors. Expert-level answers across 300+ jurisdictions, 24/7 availability, 6 languages. Try free!"
+>
+  <Header />
+  <main>
+    <Hero />
+    <UseCases />
+    <HowItWorks />
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 md:py-28 relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-neon/[0.02] to-transparent pointer-events-none"></div>
+      <div class="section-container relative">
+        <div class="text-center mb-12">
+          <span class="text-neon font-heading text-sm tracking-widest uppercase">Live Demo</span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mt-4 mb-6">
+            Try Eva <span class="text-neon glow-text">Right Now</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            Ask Eva anything about company formation, tax optimization, or offshore structures.
+            Click any question below to see her in action.
+          </p>
+        </div>
+        <DemoChat client:visible />
+      </div>
+    </section>
+
+    <Stats />
+    <Pricing />
+    <BlogPreview />
+    <FAQ />
+    <Contact />
+  </main>
+  <Footer />
+  <FloatingChat client:load />
+</Layout>

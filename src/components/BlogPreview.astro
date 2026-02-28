@@ -1,0 +1,59 @@
+---
+const posts = [
+  {
+    title: 'How AI is Transforming Tax Consulting in 2025',
+    excerpt: 'Discover how artificial intelligence is revolutionizing the way tax consultants work, from automated compliance checks to predictive analytics.',
+    category: 'AI & Tax',
+    date: 'Feb 15, 2025',
+    readTime: '5 min read',
+  },
+  {
+    title: 'Delaware vs. Singapore: Best Jurisdictions for Startups',
+    excerpt: 'A comprehensive comparison of two popular incorporation destinations, covering tax benefits, legal frameworks, and operational costs.',
+    category: 'Offshore',
+    date: 'Feb 10, 2025',
+    readTime: '8 min read',
+  },
+  {
+    title: 'Building a 24/7 Client Qualification Pipeline',
+    excerpt: 'Learn how consulting firms use AI chatbots to qualify leads around the clock, reducing response time and increasing conversion rates.',
+    category: 'Automation',
+    date: 'Feb 5, 2025',
+    readTime: '6 min read',
+  },
+];
+---
+
+<section id="blog" class="py-20 md:py-28 relative">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-electric/[0.02] to-transparent pointer-events-none"></div>
+  <div class="section-container relative">
+    <div class="text-center mb-16">
+      <span class="text-electric font-heading text-sm tracking-widest uppercase">Blog</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mt-4 mb-6">
+        Latest <span class="text-electric glow-text-electric">Insights</span>
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+        Stay ahead with expert analysis on AI, tax consulting, and business automation.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {posts.map((post) => (
+        <a href="#" class="card-dark group block">
+          <div class="h-40 bg-gradient-to-br from-neon/10 to-electric/10 rounded-lg mb-4 flex items-center justify-center">
+            <svg class="w-12 h-12 text-neon/30 group-hover:text-neon/60 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            </svg>
+          </div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-neon text-xs font-heading font-bold bg-neon/10 px-2 py-1 rounded">{post.category}</span>
+            <span class="text-gray-500 text-xs">{post.date}</span>
+            <span class="text-gray-500 text-xs">{post.readTime}</span>
+          </div>
+          <h3 class="font-heading text-lg font-bold mb-2 group-hover:text-neon transition-colors">{post.title}</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">{post.excerpt}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

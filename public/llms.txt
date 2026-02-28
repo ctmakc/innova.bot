@@ -1,0 +1,20 @@
+# Eva AI by Innova Consulting Group
+
+## About
+Eva AI is an intelligent business assistant designed for tax consultants, lawyers, and business advisors. Powered by advanced AI technology, Eva provides expert-level answers across 300+ jurisdictions in 6 languages.
+
+## Key Features
+- Tax & Offshore Consulting: Knowledge of 300+ jurisdictions
+- Legal Research: Instant corporate law answers
+- Lead Qualification: 24/7 automated pre-qualification
+- Document Analysis: AI-powered contract review
+- Multilingual: EN, RU, UK, DE, FR, ES
+
+## Contact
+- Website: https://innova.bot
+- Email: bot@innova.bot
+- Telegram: https://t.me/+380677777230
+- WhatsApp: https://api.whatsapp.com/send/?phone=380677777230
+
+## Company
+Powered by Innova Consulting Group

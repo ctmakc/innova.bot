@@ -1,0 +1,114 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="AI assistant for tax consulting, business chatbot, AI consulting bot, Eva AI, tax consulting AI, offshore consulting, legal research AI" />
+    <meta name="author" content="Innova Consulting Group" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://innova.bot" />
+    <meta property="og:image" content="https://innova.bot/og-image.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="canonical" href="https://innova.bot" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Eva AI",
+      "applicationCategory": "BusinessApplication",
+      "description": "AI-powered business assistant for tax consulting, legal research, and lead qualification. Trained on 300+ jurisdictions.",
+      "url": "https://innova.bot",
+      "operatingSystem": "Web",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Business",
+          "price": "99",
+          "priceCurrency": "USD"
+        }
+      ],
+      "creator": {
+        "@type": "Organization",
+        "name": "Innova Consulting Group",
+        "url": "https://innova.bot"
+      }
+    })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Eva AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eva AI is an intelligent business assistant powered by advanced AI technology. It specializes in tax consulting, legal research, lead qualification, and document analysis across 300+ jurisdictions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many languages does Eva support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eva supports 6 languages: English, Russian, Ukrainian, German, French, and Spanish, with more languages coming soon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Eva analyze legal documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Eva can analyze contracts, legal documents, and corporate filings. Simply upload your document and Eva will provide a detailed AI-powered review."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a free plan available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Eva offers a free plan that includes up to 50 messages per month, access to basic tax and legal knowledge, and single language support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Eva protect my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eva uses end-to-end encryption, SOC 2 compliant infrastructure, and never shares your data with third parties. All conversations and documents are processed securely."
+          }
+        }
+      ]
+    })} />
+  </head>
+  <body class="matrix-bg">
+    <slot />
+  </body>
+</html>

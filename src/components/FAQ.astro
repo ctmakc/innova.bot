@@ -1,0 +1,77 @@
+---
+const faqs = [
+  {
+    question: 'What is Eva AI?',
+    answer: 'Eva AI is an intelligent business assistant powered by advanced AI technology. It specializes in tax consulting, legal research, lead qualification, and document analysis across 300+ jurisdictions. Eva helps consulting firms automate client interactions and deliver expert-level answers 24/7.',
+  },
+  {
+    question: 'How many languages does Eva support?',
+    answer: 'Eva currently supports 6 languages: English, Russian, Ukrainian, German, French, and Spanish. We are continuously expanding language support to serve more markets globally.',
+  },
+  {
+    question: 'Can Eva analyze legal documents?',
+    answer: 'Yes, Eva can analyze contracts, legal documents, and corporate filings. Simply upload your document and Eva will provide a detailed AI-powered review, identifying key clauses, potential risks, and important terms within seconds.',
+  },
+  {
+    question: 'Is there a free plan available?',
+    answer: 'Absolutely! Eva offers a free plan that includes up to 50 messages per month, access to basic tax and legal knowledge, single language support, and our web chat widget. It\'s perfect for trying out Eva before committing to a paid plan.',
+  },
+  {
+    question: 'How does Eva protect my data?',
+    answer: 'Security is our top priority. Eva uses end-to-end encryption for all communications, runs on SOC 2 compliant infrastructure, and never shares your data with third parties. All conversations and documents are processed securely and can be deleted at any time upon request.',
+  },
+];
+---
+
+<section id="faq" class="py-20 md:py-28">
+  <div class="section-container">
+    <div class="text-center mb-16">
+      <span class="text-neon font-heading text-sm tracking-widest uppercase">FAQ</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mt-4 mb-6">
+        Frequently Asked <span class="text-neon glow-text">Questions</span>
+      </h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+      {faqs.map((faq, i) => (
+        <div class="card-dark faq-item" data-faq-index={i}>
+          <button
+            class="w-full flex items-center justify-between text-left gap-4"
+            aria-expanded="false"
+          >
+            <h3 class="font-heading text-lg font-bold">{faq.question}</h3>
+            <svg class="w-5 h-5 text-neon flex-shrink-0 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-answer hidden mt-4 text-gray-400 leading-relaxed">
+            {faq.answer}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-item button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item?.querySelector('.faq-answer');
+      const icon = item?.querySelector('.faq-icon');
+      const isOpen = !answer?.classList.contains('hidden');
+
+      // Close all
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+      document.querySelectorAll('.faq-item button').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+      // Toggle current
+      if (!isOpen) {
+        answer?.classList.remove('hidden');
+        icon?.classList.add('rotate-180');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
